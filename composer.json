@@ -11,5 +11,9 @@
         "behat/mink-extension": "~2@dev",
         "behat/mink-selenium2-driver": "*",
         "symfony/symfony": "~2.4"
-    }
+    },
+    "autoload": {
+        "psr-0": { "Knp\\RevealBundle": "" }
+    },
+    "target-dir": "Knp/RevealBundle"
 }
