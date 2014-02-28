@@ -1,0 +1,14 @@
+{
+    "config": {
+        "bin-dir": "bin"
+    },
+    "require": {
+        "php":                      ">=5.4"
+    },
+    "require-dev": {
+        "behat/behat": "~3@dev",
+        "behat/mink-extension": "~2@dev",
+        "behat/mink-selenium2-driver": "*",
+        "symfony/symfony": "~2.4"
+    }
+}

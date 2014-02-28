@@ -1,0 +1,8 @@
+parameters:
+    knp_reveal.layout_template: "KnpRevealBundle::layout.html.twig"
+
+services:
+    knp_reveal.twig.reveal_extension:
+        class: Knp\RevealBundle\Twig\RevealExtension
+        tags:
+            - { name: twig.extension }

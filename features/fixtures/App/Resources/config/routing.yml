@@ -1,0 +1,3 @@
+reveal:
+    pattern: /
+    defaults: { _controller: 'App:Slide:slides' }

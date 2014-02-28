@@ -1,0 +1,16 @@
+language: php
+
+php: [5.4]
+
+cache:
+  directories:
+    - vendor
+
+before_script:
+  - composer install --prefer-source --dev
+  - phantomjs --webdriver=4444 &
+  - php -S localhost:8080 -t features/fixtures &
+
+script:
+    - ./bin/phpspec run -fpretty
+    - ./bin/behat --verbose

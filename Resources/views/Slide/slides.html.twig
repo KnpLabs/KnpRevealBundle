@@ -1,0 +1,8 @@
+{% extends layoutTemplate %}
+
+{% block slides %}
+    {% for slide in slides %}
+        {% set slideIndex = loop.index - 1 %}
+        {% include slide %}
+    {% endfor %}
+{% endblock %}

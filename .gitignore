@@ -1,0 +1,4 @@
+bin
+features/fixtures/tmp
+behat.yml
+vendor
