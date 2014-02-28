@@ -1,7 +1,8 @@
 {
-    "config": {
-        "bin-dir": "bin"
-    },
+    "name": "knplabs/knp-reveal-bundle",
+    "description": "Simple bundle that uses Reveal.js and Symfony to make maintainable presentations",
+    "license": "MIT",
+    "minimum-stability": "dev",
     "require": {
         "php":                      ">=5.4"
     },
