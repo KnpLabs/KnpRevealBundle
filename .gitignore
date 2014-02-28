@@ -2,3 +2,4 @@ bin
 features/fixtures/tmp
 behat.yml
 vendor
+composer.lock
