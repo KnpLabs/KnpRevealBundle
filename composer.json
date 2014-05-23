@@ -3,6 +3,9 @@
     "description": "Simple bundle that uses Reveal.js and Symfony to make maintainable presentations",
     "license": "MIT",
     "minimum-stability": "dev",
+    "config": {
+        "bin-dir": "bin"
+    },
     "require": {
         "php":                      ">=5.4",
         "phpspec/phpspec": "2.0.*@dev"
