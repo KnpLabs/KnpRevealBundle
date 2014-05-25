@@ -1,5 +1,4 @@
 <?php
-
 namespace Knp\RevealBundle\Controller;
 
 use Symfony\Component\Finder\Finder;
@@ -11,10 +10,8 @@ trait SlideTrait
     public function slidesAction()
     {
         $slidesDirectory = $this->getSlidesDirectory();
-        if (!is_dir($slidesDirectory)) {
-            $slidesDirectory = $this->container->get('kernel')
-                ->locateResource($slidesDirectory)
-            ;
+        if (! is_dir($slidesDirectory)) {
+            $slidesDirectory = $this->container->get('kernel')->locateResource($slidesDirectory);
         }
 
         $slides = [];
@@ -22,7 +19,7 @@ trait SlideTrait
         $finder->sortByName();
         foreach ($finder->files()->in($slidesDirectory) as $file) {
             $templatePath = $file->getRealPath();
-            $slides[] = $this->getTemplateName($templatePath);
+            $slides[] = $this->getTemplateNameToInclude(basename($templatePath));
         }
 
         return $this->render('KnpRevealBundle:Slide:slides.html.twig', [
@@ -31,13 +28,16 @@ trait SlideTrait
         ]);
     }
 
-    public function getTemplateName($templatePath)
+    /**
+     *  Get template name to include in layout view
+     *
+     * @param string $templateName
+     */
+    public function getTemplateNameToInclude($templateName)
     {
-        $srcPath = strtr($this->get('kernel')->getRootDir(), array('app' => 'src'));
-        $templatePath = strtr($templatePath, array($srcPath => ''));
-
-        if (preg_match('/^\/([^\/]+)\/?([^\/]+)\/Resources\/views\/(.+)\/([^\/]+)$/', $templatePath, $matches)) {
-            return sprintf('%s%s:%s:%s', $matches[1], $matches[2], $matches[3], $matches[4]);
+        $slidesDirectory = $this->getSlidesDirectory();
+        if (preg_match('/^@([^\/]+)\/Resources\/views\/(.+)$/', $slidesDirectory, $matches)) {
+            return sprintf('%s:%s:%s', $matches[1], $matches[2], $templateName);
         }
     }
 }
