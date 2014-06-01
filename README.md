@@ -21,7 +21,7 @@ This bundle aims to simplify slides maintenance by keeping them in Markdown or H
 
 Just add the bundle to your project
 
-    composer require knplabs/knp-reveal-bundle
+    composer require knplabs/knp-reveal-bundle 'dev-master'
 
 Register the bundle:
 
@@ -54,7 +54,6 @@ Just add a new Controller using `SlideTrait` and define a directory where you wi
 namespace Knp\AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
 use Knp\RevealBundle\Controller\SlideTrait;
 
 class FooController extends Controller
