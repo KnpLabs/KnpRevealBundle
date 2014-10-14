@@ -7,14 +7,14 @@
         "bin-dir": "bin"
     },
     "require": {
-        "php":                      ">=5.4",
-        "phpspec/phpspec": "2.0.*@dev"
+        "php":              ">=5.4",
+        "symfony/symfony":  "~2.4"
     },
     "require-dev": {
-        "behat/behat": "~3@dev",
-        "behat/mink-extension": "~2@dev",
-        "behat/mink-selenium2-driver": "*",
-        "symfony/symfony": "~2.4"
+        "behat/behat":                  "~3@dev",
+        "behat/mink-extension":         "~2@dev",
+        "behat/mink-selenium2-driver":  "*",
+        "phpspec/phpspec":              "~2@dev"
     },
     "autoload": {
         "psr-0": { "Knp\\RevealBundle": "" }
