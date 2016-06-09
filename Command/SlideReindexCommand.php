@@ -28,7 +28,7 @@ class SlideReindexCommand extends ContainerAwareCommand
     {
         $directory = $input->getArgument('directory');
         if (!is_dir($directory)) {
-            throw new \Exception(sprintf('`%s` is not a valid directory !'));
+            throw new \Exception(sprintf('`%s` is not a valid directory !', $directory));
         }
         $directory = rtrim($directory, '/');
 
